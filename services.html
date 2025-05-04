@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>RC Reign</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <a href="index.html">
+            <img class="logo" src="RC LOGO.png" alt="Logo">
+          </a>
+          <nav class="center-nav">
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="career.html">Career</a></li>
+              <li><a href="management.html">Management</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          </div>
+      </header>
+
+      <section class="services">
+        <div class="services-containter">
+            <div class="serviceshead">
+            <h1 class="ostext"><span class="osprovidetext">WE</span>PROVIDE</h1>
+            </div>
+            <p class="osdes">Tailored staffing solutions built on experience, efficiency, and ethical recruitment.</p>
+        </div>
+      </section>
+
+      <section class="ssl-services">
+        <div class="ssl-cards">
+          <div class="ssl-card">
+            <span class="material-symbols-outlined" style="font-size: 128px;">psychology</span>
+            <h3 class="stitle">Skilled Professional</h3>
+            <p class="sdes">We are committed to providing you with only the most highly qualified and rigorously pre-screened candidates, ensuring a perfect fit for your unique industrial demands.</p>
+          </div>
+          <div class="ssl-card">
+            <span class="material-symbols-outlined" style="font-size: 128px;">folder_match</span>
+            <h3 class="stitle">Talent <br> Matching</h3>
+            <p class="sdes">Our recruitment team ensures that every candidate is matched according to the client’s specific job requirements and qualifications.</p>
+          </div>
+          <div class="ssl-card">
+            <span class="material-symbols-outlined" style="font-size: 128px;">globe_asia</span>
+            <h3 class="stitle">Local & International</h3>
+            <p class="sdes">​Whether for domestic roles or overseas opportunities, we connect Filipino talent with reputable employers worldwide.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="ssl-services2">
+        <div class="ssl-cards2">
+          <div class="ssl-card2">
+            <span class="material-symbols-outlined" style="font-size: 128px;">person_play</span>
+            <h3 class="s2title">Full Staffing <br> Solution</h3>
+            <p class="s2des">From recruitment and onboarding to deployment, we offer end-to-end staffing services that ensure a seamless hiring process.</p>
+          </div>
+          <div class="ssl-card2">
+            <span class="material-symbols-outlined" style="font-size: 128px;">shield</span>
+            <h3 class="s2title">Risk <br> Management</h3>
+            <p class="s2des">Through background checks and careful screening, we help reduce hiring risks and ensure the right fit for every position.</p>
+          </div>
+          <div class="ssl-card2">
+            <span class="material-symbols-outlined" style="font-size: 128px;">support_agent</span>
+            <h3 class="s2title">Administrative Support</h3>
+            <p class="s2des">Streamline your operations with our comprehensive administrative support, freeing you to focus on your core business.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="coreval">
+        <div class="corevalhead">
+            <h1 class="coretext"><span class="valuetext">CORE</span> VALUES</h1>
+        </div>
+
+        <div class="coreval-cards">
+            <div class="coreval-card coreval-card1">
+                <span class="material-symbols-outlined">check_circle</span>
+                <p class="card-description">A commitment to delivering exceptional recruitment solutions.</p>
+            </div>
+            <div class="coreval-card coreval-card2">
+                <span class="material-symbols-outlined">people</span>
+                <p class="card-description">A dedication to creating a professional workforce that effectively caters to the requirements of business partners.</p>
+            </div>
+            <div class="coreval-card coreval-card3">
+                <span class="material-symbols-outlined">verified_user</span>
+                <p class="card-description">An understanding that trust and consistency are fundamental to their operations.</p>
+            </div>
+            <div class="coreval-card coreval-card4">
+                <span class="material-symbols-outlined">gavel</span>
+                <p class="card-description">A pledge to operate with honesty, ethics, and transparency in all interactions and business practices.</p>
+            </div>
+            <div class="coreval-card coreval-card5">
+                <span class="material-symbols-outlined">handshake</span>
+                <p class="card-description">A focus on building strong partnerships with clients, candidates, and stakeholders, working collaboratively to achieve mutual success.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const coreValSection = document.querySelector('.coreval');
+        const coreValCards = document.querySelectorAll('.coreval-card');
+    
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              coreValCards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add('pop-up-bottom');
+                }, index * 200);
+              });
+              observer.unobserve(coreValSection);
+            }
+          });
+        }, {
+          threshold: 0.5
+        });
+    
+        observer.observe(coreValSection);
+      });
+    
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(
+          '.mission-side, .vision-side, .ssl-card, .ssl-card2'
+        );
+    
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in');
+            }
+          });
+        }, {
+          threshold: 0.3
+        });
+    
+        fadeElements.forEach(el => observer.observe(el));
+      });
+    
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(
+          '.mission-side, .vision-side, .ssl-card, .ssl-card2, .abouthead, .abdes, .serviceshead, .osdes'
+        );
+    
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in');
+            }
+          });
+        }, {
+          threshold: 0.3
+        });
+    
+        fadeElements.forEach(el => observer.observe(el));
+      });
+        </script>
+      
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h1 class="RCtext">RC<span class="Reigntext">REIGN</span></h1>
+            </div>
+            <div class="footer-info">
+                <div class="visit">
+                    <h4>Visit</h4>
+                    <p>RC Reign Manpower Agency</p>
+                    <p>#287 P. Tuazon St. cor. 18th Ave., Cubao, Quezon City</p>
+                </div>
+                <div class="connect">
+                    <h4>Connect</h4>
+                    <p>Phone: +632-89216679</p>
+                    <p>Email: cac.rcreign@gmail.com</p>
+                </div>
+                <div class="stay-connected">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to our newsletter to receive the latest job openings, industry news, and agency updates.</p>
+                    </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>© 2025 RC Reign Manpower Agency</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

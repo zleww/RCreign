@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+        <title>RC Reign</title>
+      </head>
+<body>
+    <header>
+        <div class="header-container">
+          <a href="index.html">
+            <img class="logo" src="RC LOGO.png" alt="Logo">
+          </a>
+          <nav class="center-nav">
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="career.html">Career</a></li>
+              <li><a href="management.html">Management</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          </div>
+      </header>
+    
+        <main class="career">
+            <div class="career-container">
+                <div class="careerhead ">
+                    <h1 class="jtt">JOIN THE TEAM</h1>
+                    <p class="careerdes">Build your career with <span class="bluecdes">RC REIGN MANPOWER AGENCY</span>, a company dedicated to providing excellent recruitment solutions and fostering strong partnerships.</p>
+                </div>
+        </main>
+
+        <section class="positions">
+          <div class="positions-wrapper" id="positionsSet1">
+            <div class="position-box pop-up">
+              <h3>Recruitment Specialist</h3>
+              <p>Sources, screens, interviews, and selects qualified candidates for various job openings. Builds relationships with potential candidates and matches their skills and experience with client requirements.</p>
+            </div>
+            <div class="position-box pop-up">
+              <h3>HR Coordinator</h3>
+              <p>Assists with human resources functions, including employee onboarding, payroll processing, benefits administration, and maintaining employee records.</p>
+            </div>
+            <div class="position-box pop-up">
+              <h3>Account Manager/Business Development Manager</h3>
+              <p>Develops and maintains relationships with client companies, understands their staffing needs, and promotes the agency's services. Identifies new business opportunities and expands the client base.</p>
+            </div>
+          </div>
+        
+          <div class="positions-wrapper hidden" id="positionsSet2">
+            <div class="position-box pop-up">
+              <h3>Operations Coordinator</h3>
+              <p>Supports the day-to-day operations of the agency, ensuring efficient workflow, coordinating with different teams, and resolving operational issues.</p>
+            </div>
+            <div class="position-box pop-up">
+              <h3>Administrative Assistant</h3>
+              <p>Provides administrative and clerical support to the agency staff, including managing correspondence, scheduling appointments, and organizing files.</p>
+            </div>
+            <div class="position-box pop-up">
+              <h3>Payroll Specialist</h3>
+              <p>Processes employee payroll accurately and on time, calculates wages and deductions, and ensures compliance with payroll regulations.</p>
+            </div>
+            <div class="position-box pop-up">
+              <h3>Client Relations Specialist</h3>
+              <p>Focuses on maintaining strong relationships with existing clients, addressing their concerns, and ensuring their satisfaction with the agency's services.</p>
+            </div>
+          </div>
+        
+          <div class="positions-nav">
+            <button id="prev-button" class="nav-button prev-button">❮</button>
+            <button id="next-button" class="nav-button next-button">❯</button>
+          </div>
+        </section>
+          
+          <section class="jobform hidden pop-up-form">
+            <div class="jobform-container">
+              <button class="close-btn" aria-label="Close Form">&times;</button>
+              <h2>Job Application Format</h2>
+              <p>Submit your details and resume below. Our team will contact you if you're shortlisted.</p>
+          
+              <form class="application-form">
+                <div class="form-group">
+                  <input type="text" placeholder="First Name" name="firstName" required>
+                  <input type="text" placeholder="Last Name" name="lastName" required>
+                </div>
+          
+                <div class="form-group">
+                  <input type="email" placeholder="Email" name="email" required>
+                  <input type="tel" placeholder="Phone Number" name="phone" required>
+                </div>
+          
+                <div class="form-group">
+                  <input type="text" placeholder="Address" name="address" required>
+                </div>
+          
+                <div class="form-group">
+                  <input type="text" placeholder="Position Applying For (optional)" name="position">
+                </div>
+          
+                <div class="form-group">
+                  <label class="file-label">Upload Resume:</label>
+                  <input type="file" name="resume" required>
+                </div>
+          
+                <button type="submit" class="submit-btn">Submit Application</button>
+              </form>
+            </div>
+          </section>
+          <div class="pop-up-overlay"></div>
+
+
+          <script>
+  document.getElementById('prev-button').addEventListener('click', () => showSet(1));
+  document.getElementById('next-button').addEventListener('click', () => showSet(2));
+
+  function showSet(setNumber) {
+    const set1 = document.getElementById("positionsSet1");
+    const set2 = document.getElementById("positionsSet2");
+    const boxes1 = set1.querySelectorAll(".position-box");
+    const boxes2 = set2.querySelectorAll(".position-box");
+
+    // Reset animations
+    boxes1.forEach(box => {
+      box.classList.remove("pop-in");
+    });
+    boxes2.forEach(box => {
+      box.classList.remove("pop-in");
+    });
+
+    if (setNumber === 1) {
+      set1.classList.remove("hidden");
+      set2.classList.add("hidden");
+      // Trigger animation with a slight delay for each box
+      boxes1.forEach((box, index) => {
+        setTimeout(() => {
+          box.classList.add("pop-in");
+        }, index * 150); // Adjust delay as needed
+      });
+    } else {
+      set1.classList.add("hidden");
+      set2.classList.remove("hidden");
+      // Trigger animation with a slight delay for each box
+      boxes2.forEach((box, index) => {
+        setTimeout(() => {
+          box.classList.add("pop-in");
+        }, index * 150); // Adjust delay as needed
+      });
+    }
+  }
+
+  // Initial load animation for the first set
+  const initialBoxes = document.getElementById("positionsSet1").querySelectorAll(".position-box");
+  initialBoxes.forEach((box, index) => {
+    setTimeout(() => {
+      box.classList.add("pop-in");
+    }, index * 150); // Adjust delay as needed
+  });
+
+
+////
+const jobForm = document.querySelector('.jobform');
+  const overlay = document.querySelector('.pop-up-overlay');
+
+  document.querySelectorAll('.position-box').forEach(box => {
+    box.addEventListener('click', () => {
+      jobForm.classList.add('active');
+      overlay.classList.add('active');
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    jobForm.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  ////
+  const positionBoxes = document.querySelectorAll(".position-box");
+  const popupForm = document.querySelector(".pop-up-form");
+  const popupOverlay = document.querySelector(".pop-up-overlay");
+  const closeBtn = document.querySelector(".close-btn");
+
+  positionBoxes.forEach(box => {
+    box.addEventListener("click", () => {
+      popupForm.classList.add("active");
+      popupOverlay.classList.add("active");
+    });
+  });
+
+  popupOverlay.addEventListener("click", () => {
+    popupForm.classList.remove("active");
+    popupOverlay.classList.remove("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popupForm.classList.remove("active");
+    popupOverlay.classList.remove("active");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelector(".pop-up-form").classList.remove("active");
+      document.querySelector(".pop-up-overlay").classList.remove("active");
+    }
+  });
+          </script>
+
+        <footer>
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h1 class="RCtext">RC<span class="Reigntext">REIGN</span></h1>
+                </div>
+                <div class="footer-info">
+                    <div class="visit">
+                        <h4>Visit</h4>
+                        <p>RC Reign Manpower Agency</p>
+                        <p>#287 P. Tuazon St. cor. 18th Ave., Cubao, Quezon City</p>
+                    </div>
+                    <div class="connect">
+                        <h4>Connect</h4>
+                        <p>Phone: +632-89216679</p>
+                        <p>Email: cac.rcreign@gmail.com</p>
+                    </div>
+                    <div class="stay-connected">
+                        <h4>Stay Connected</h4>
+                        <p>Subscribe to our newsletter to receive the latest job openings, industry news, and agency updates.</p>
+                        </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 RC Reign Manpower Agency</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
